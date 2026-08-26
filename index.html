@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>CalcBhai - Free Online Calculators</title>
-  <meta name="description" content="Free EMI, percentage, GST, age and unit calculators. Fast and easy online calculators.">
+  <meta name="description" content="Free online EMI, percentage, GST, age and unit calculators.">
 
   <style>
     * {
@@ -125,14 +125,12 @@
       font-weight: bold;
     }
 
-    input,
-    select {
+    input {
       width: 100%;
       padding: 13px;
       border: 1px solid #d1d5db;
       border-radius: 8px;
       font-size: 16px;
-      background: white;
     }
 
     button {
@@ -170,31 +168,37 @@
       margin-bottom: 30px;
     }
 
-    .about h2 {
-      margin-bottom: 10px;
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 35px 15px;
+      margin-top: 40px;
     }
 
-    <<footer>
+    footer p {
+      margin-bottom: 18px;
+    }
 
-  <p>© 2026 CalcBhai. All rights reserved.</p>
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-  <br>
-
-  <a href="#home">Home</a>
-  <a href="#tools">Calculators</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="disclaimer.html">Disclaimer</a>
-  <a href="terms.html">Terms</a>
-
-</footer>
+    .footer-links a {
       color: white;
       text-decoration: none;
-      margin: 0 8px;
+      padding: 8px 10px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 600px) {
+
       .nav {
         flex-direction: column;
         gap: 8px;
@@ -211,6 +215,11 @@
       .calculator {
         padding: 20px;
       }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 3px;
+      }
     }
   </style>
 </head>
@@ -218,23 +227,34 @@
 <body>
 
 <header>
+
   <div class="nav">
-    <div class="logo">CalcBhai 🧮</div>
+
+    <div class="logo">
+      CalcBhai 🧮
+    </div>
 
     <nav>
       <a href="#home">Home</a>
       <a href="#tools">Tools</a>
       <a href="#about">About</a>
     </nav>
+
   </div>
+
 </header>
 
 
 <main id="home">
 
   <section class="hero container">
+
     <h1>Free Online Calculators</h1>
-    <p>Simple, fast and free calculators for everyday use.</p>
+
+    <p>
+      Simple, fast and free calculators for everyday use.
+    </p>
+
   </section>
 
 
@@ -250,8 +270,8 @@
 
       <div class="tool-card" onclick="showCalculator('percentage')">
         <div class="tool-icon">📊</div>
-        <h3>Percentage</h3>
-        <p>Calculate percentage easily.</p>
+        <h3>Percentage Calculator</h3>
+        <p>Calculate percentages easily.</p>
       </div>
 
       <div class="tool-card" onclick="showCalculator('age')">
@@ -263,19 +283,19 @@
       <div class="tool-card" onclick="showCalculator('gst')">
         <div class="tool-icon">💰</div>
         <h3>GST Calculator</h3>
-        <p>Add or remove GST.</p>
+        <p>Calculate GST amount and total.</p>
       </div>
 
       <div class="tool-card" onclick="showCalculator('unit')">
         <div class="tool-icon">🔄</div>
         <h3>Unit Converter</h3>
-        <p>Convert common units.</p>
+        <p>Convert kilometers to miles.</p>
       </div>
 
     </div>
 
 
-    <!-- EMI -->
+    <!-- EMI CALCULATOR -->
 
     <div class="calculator" id="emi">
 
@@ -290,51 +310,65 @@
       <label>Loan Tenure (Years)</label>
       <input type="number" id="years" placeholder="5">
 
-      <button onclick="calculateEMI()">Calculate EMI</button>
+      <button onclick="calculateEMI()">
+        Calculate EMI
+      </button>
 
       <div class="result" id="emiResult">
+
         <p>Monthly EMI</p>
+
         <strong id="emiValue">₹0</strong>
-        <p>Total Interest: <span id="interestValue">₹0</span></p>
-        <p>Total Payment: <span id="totalValue">₹0</span></p>
+
+        <p>Total Interest:
+          <span id="interestValue">₹0</span>
+        </p>
+
+        <p>Total Payment:
+          <span id="totalValue">₹0</span>
+        </p>
+
       </div>
 
     </div>
 
 
-    <!-- Percentage -->
+    <!-- PERCENTAGE CALCULATOR -->
 
     <div class="calculator" id="percentage">
 
       <h2>📊 Percentage Calculator</h2>
 
-      <label>What is the percentage?</label>
+      <label>Percentage (%)</label>
 
       <input
         type="number"
         id="percentValue"
-        placeholder="Example: 20">
+        placeholder="20">
 
-      <label>Of number</label>
+      <label>Number</label>
 
       <input
         type="number"
         id="percentNumber"
-        placeholder="Example: 500">
+        placeholder="500">
 
       <button onclick="calculatePercentage()">
-        Calculate Percentage
+        Calculate
       </button>
 
       <div class="result" id="percentageResult">
+
         <p>Result</p>
+
         <strong id="percentageValue">0</strong>
+
       </div>
 
     </div>
 
 
-    <!-- Age -->
+    <!-- AGE CALCULATOR -->
 
     <div class="calculator" id="age">
 
@@ -349,14 +383,17 @@
       </button>
 
       <div class="result" id="ageResult">
+
         <p>Your age is</p>
+
         <strong id="ageValue">0 years</strong>
+
       </div>
 
     </div>
 
 
-    <!-- GST -->
+    <!-- GST CALCULATOR -->
 
     <div class="calculator" id="gst">
 
@@ -381,39 +418,53 @@
       </button>
 
       <div class="result" id="gstResult">
-        <p>GST Amount: <strong id="gstValue">₹0</strong></p>
-        <p>Total Amount: <strong id="gstTotal">₹0</strong></p>
+
+        <p>
+          GST Amount:
+          <strong id="gstValue">₹0</strong>
+        </p>
+
+        <p>
+          Total Amount:
+          <strong id="gstTotal">₹0</strong>
+        </p>
+
       </div>
 
     </div>
 
 
-    <!-- Unit Converter -->
+    <!-- UNIT CONVERTER -->
 
     <div class="calculator" id="unit">
 
-      <h2>🔄 Kilometers to Miles</h2>
+      <h2>🔄 Kilometer to Miles</h2>
 
       <label>Kilometers</label>
 
       <input
         type="number"
         id="km"
-        placeholder="Example: 10">
+        placeholder="10">
 
       <button onclick="convertKM()">
         Convert
       </button>
 
       <div class="result" id="unitResult">
+
         <p>Miles</p>
+
         <strong id="mileValue">0</strong>
+
       </div>
 
     </div>
 
   </section>
 
+
+  <!-- ABOUT -->
 
   <section class="about container" id="about">
 
@@ -430,15 +481,31 @@
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-  <p>© 2026 CalcBhai. All rights reserved.</p>
+  <p>
+    © 2026 CalcBhai. All rights reserved.
+  </p>
 
-  <br>
+  <div class="footer-links">
 
-  <a href="#home">Home</a>
-  <a href="#tools">Calculators</a>
-  <a href="#about">About</a>
+    <a href="index.html">Home</a>
+
+    <a href="#tools">Calculators</a>
+
+    <a href="about.html">About</a>
+
+    <a href="contact.html">Contact</a>
+
+    <a href="privacy.html">Privacy Policy</a>
+
+    <a href="disclaimer.html">Disclaimer</a>
+
+    <a href="terms.html">Terms & Conditions</a>
+
+  </div>
 
 </footer>
 
@@ -458,16 +525,25 @@ function showCalculator(id) {
 
 function calculateEMI() {
 
-  let loan = Number(document.getElementById("loan").value);
-  let rate = Number(document.getElementById("rate").value);
-  let years = Number(document.getElementById("years").value);
+  let loan =
+    Number(document.getElementById("loan").value);
+
+  let rate =
+    Number(document.getElementById("rate").value);
+
+  let years =
+    Number(document.getElementById("years").value);
 
   if (loan <= 0 || rate < 0 || years <= 0) {
+
     alert("Please enter valid values.");
+
     return;
+
   }
 
   let months = years * 12;
+
   let monthlyRate = rate / 12 / 100;
 
   let emi;
@@ -487,29 +563,34 @@ function calculateEMI() {
   }
 
   let total = emi * months;
+
   let interest = total - loan;
 
   document.getElementById("emiValue").innerText =
-    "₹" + emi.toLocaleString("en-IN", {
+    "₹" +
+    emi.toLocaleString("en-IN", {
       maximumFractionDigits: 0
     });
 
   document.getElementById("interestValue").innerText =
-    "₹" + interest.toLocaleString("en-IN", {
+    "₹" +
+    interest.toLocaleString("en-IN", {
       maximumFractionDigits: 0
     });
 
   document.getElementById("totalValue").innerText =
-    "₹" + total.toLocaleString("en-IN", {
+    "₹" +
+    total.toLocaleString("en-IN", {
       maximumFractionDigits: 0
     });
 
-  document.getElementById("emiResult").style.display = "block";
+  document.getElementById("emiResult").style.display =
+    "block";
 
 }
 
 
-/* Percentage */
+/* PERCENTAGE */
 
 function calculatePercentage() {
 
@@ -520,11 +601,15 @@ function calculatePercentage() {
     Number(document.getElementById("percentNumber").value);
 
   if (percentage < 0 || number < 0) {
+
     alert("Please enter valid values.");
+
     return;
+
   }
 
-  let result = (percentage / 100) * number;
+  let result =
+    (percentage / 100) * number;
 
   document.getElementById("percentageValue").innerText =
     result.toLocaleString("en-IN");
@@ -535,30 +620,43 @@ function calculatePercentage() {
 }
 
 
-/* Age */
+/* AGE */
 
 function calculateAge() {
 
-  let dob = new Date(
-    document.getElementById("dob").value
-  );
+  let dobInput =
+    document.getElementById("dob").value;
 
-  if (!document.getElementById("dob").value) {
+  if (!dobInput) {
+
     alert("Please select your date of birth.");
+
     return;
+
   }
 
-  let today = new Date();
+  let dob =
+    new Date(dobInput);
 
-  let age = today.getFullYear() - dob.getFullYear();
+  let today =
+    new Date();
 
-  let month = today.getMonth() - dob.getMonth();
+  let age =
+    today.getFullYear() - dob.getFullYear();
+
+  let month =
+    today.getMonth() - dob.getMonth();
 
   if (
     month < 0 ||
-    (month === 0 && today.getDate() < dob.getDate())
+    (
+      month === 0 &&
+      today.getDate() < dob.getDate()
+    )
   ) {
+
     age--;
+
   }
 
   document.getElementById("ageValue").innerText =
@@ -581,18 +679,26 @@ function calculateGST() {
     Number(document.getElementById("gstRate").value);
 
   if (amount <= 0 || rate < 0) {
+
     alert("Please enter valid values.");
+
     return;
+
   }
 
-  let gst = amount * rate / 100;
-  let total = amount + gst;
+  let gst =
+    amount * rate / 100;
+
+  let total =
+    amount + gst;
 
   document.getElementById("gstValue").innerText =
-    "₹" + gst.toLocaleString("en-IN");
+    "₹" +
+    gst.toLocaleString("en-IN");
 
   document.getElementById("gstTotal").innerText =
-    "₹" + total.toLocaleString("en-IN");
+    "₹" +
+    total.toLocaleString("en-IN");
 
   document.getElementById("gstResult").style.display =
     "block";
@@ -600,7 +706,7 @@ function calculateGST() {
 }
 
 
-/* KM to Miles */
+/* KM TO MILES */
 
 function convertKM() {
 
@@ -608,11 +714,15 @@ function convertKM() {
     Number(document.getElementById("km").value);
 
   if (km < 0) {
+
     alert("Please enter a valid number.");
+
     return;
+
   }
 
-  let miles = km * 0.621371;
+  let miles =
+    km * 0.621371;
 
   document.getElementById("mileValue").innerText =
     miles.toFixed(3);
